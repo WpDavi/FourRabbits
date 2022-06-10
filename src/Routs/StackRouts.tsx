@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Login from "../StackPage/Login";
 import First from "../StackPage/First";
 import Registration from "../StackPage/Registration";
+import Routs2 from "./TabRouts";
 
 
 const Stack = createNativeStackNavigator();
@@ -29,6 +30,12 @@ export default function Routs () {
              <Stack.Screen
              name="Registration"
              component={Registration}
+             options={{headerShown: false}}
+             />
+
+             <Stack.Screen
+             name="Routs2"
+             component={Routs2}
              options={{headerShown: false}}
              />
 

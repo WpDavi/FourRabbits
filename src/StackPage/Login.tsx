@@ -24,7 +24,9 @@ export default function Login() {
                 <Text style={styles.txt}> Senha </Text>
                 <TextInput secureTextEntry={true} placeholderTextColor={'#9FA0A2'} style={styles.inputlogin} placeholder="Digite uma senha..."/>
                 
-                <TouchableOpacity style={styles.buttonlogin}>
+                <TouchableOpacity
+                onPress={() => navigation.navigate('Routs2')}                                
+                 style={styles.buttonlogin}>
                     <Text style={styles.txtbuttonlogin}> Entrar </Text>
                 </TouchableOpacity>
                 
