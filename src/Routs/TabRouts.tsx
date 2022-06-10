@@ -1,5 +1,6 @@
 import React from "react";
-import { View, Text, Image } from 'react-native'
+import { View, Text, Image, TouchableOpacity } from 'react-native'
+import { useNavigation } from "@react-navigation/native";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 
 import Home from "../TabPage/Home";
@@ -11,8 +12,10 @@ import Search from "../TabPage/Search";
 const Tab = createBottomTabNavigator();
 
 export default function Routs2() {
-    return(
- //headerShown: false
+
+    const navigation = useNavigation();
+
+    return( 
         <Tab.Navigator
         screenOptions={{
             tabBarActiveTintColor:'#6C0F6D',
@@ -87,19 +90,23 @@ export default function Routs2() {
                 headerShown: false,             
                 tabBarIcon:({focused}) => (
                     
-                    <View style={{alignItems:'center', justifyContent:'center'}}>
+                    <View style={{backgroundColor:'red', padding:15, borderRadius:23, position:'absolute', bottom:40}}>
+
+                        <TouchableOpacity
+                        onPress={() => navigation.navigate('Post') } >
                         <Image
                         source={require('../../assets/TabImage/centro.png')}
                         
                         style={{
-                            width: 25,
-                            height: 25,
+                            
+                            width: 40,
+                            height: 40,
                             tintColor: focused ? '#6C0F6D' : 'white',
                         }}
                         />
-                        <Text
-                        style={{color: focused ? '#6C0F6D' : 'white', fontSize:12}}
-                        >Post</Text>
+                        </TouchableOpacity>
+                        
+                        
                     </View>
                 )
             }}              
