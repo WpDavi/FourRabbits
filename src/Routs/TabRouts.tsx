@@ -17,26 +17,31 @@ export default function Routs2() {
             <Tab.Screen
             name="Home"
             component={Home}
+            options={{ headerShown: false }}  
             />
 
             <Tab.Screen
             name="Nofication"
             component={Nofication}
+            options={{ headerShown: false }}  
             />
             
             <Tab.Screen
             name="Post"
             component={Post}
+            options={{ headerShown: false }}              
             />
 
             <Tab.Screen
             name="Perfil"
             component={Perfil}
+            options={{ headerShown: false }}  
             />
 
             <Tab.Screen
             name="Search"
             component={Search}
+            options={{ headerShown: false }}  
             />
 
         </Tab.Navigator>
