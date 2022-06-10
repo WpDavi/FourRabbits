@@ -1,4 +1,5 @@
 import React from "react";
+import { View, Text, Image } from 'react-native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 
 import Home from "../TabPage/Home";
@@ -11,37 +12,147 @@ const Tab = createBottomTabNavigator();
 
 export default function Routs2() {
     return(
-
-        <Tab.Navigator>
+ //headerShown: false
+        <Tab.Navigator
+        screenOptions={{
+            tabBarActiveTintColor:'#6C0F6D',
+            tabBarShowLabel: false,
+            tabBarStyle:{
+                backgroundColor:'#161820',
+                position:'absolute',
+                bottom: 10,
+                left: 10,
+                right: 10,
+                elevation: 0,
+                borderRadius: 30,
+                height: 70, 
+            },            
+        }}
+        >
 
             <Tab.Screen
             name="Home"
             component={Home}
-            options={{ headerShown: false }}  
+            options={{  
+                headerShown: false,             
+                tabBarIcon:({focused}) => (
+                    
+                    <View style={{alignItems:'center', justifyContent:'center'}}>
+                        <Image
+                        source={require('../../assets/TabImage/home.png')}
+                        
+                        style={{
+                            width: 25,
+                            height: 25,
+                            tintColor: focused ? '#6C0F6D' : 'white',
+                        }}
+                        />
+                        <Text
+                        style={{color: focused ? '#6C0F6D' : 'white', fontSize:12}}
+                        >Início</Text>
+                    </View>
+                )
+            }}
             />
 
             <Tab.Screen
             name="Nofication"
             component={Nofication}
-            options={{ headerShown: false }}  
+            options={{  
+                headerShown: false,             
+                tabBarIcon:({focused}) => (
+                    
+                    <View style={{alignItems:'center', justifyContent:'center'}}>
+                        <Image
+                        source={require('../../assets/TabImage/notification.png')}
+                        
+                        style={{
+                            width: 25,
+                            height: 25,
+                            tintColor: focused ? '#6C0F6D' : 'white',
+                        }}
+                        />
+                        <Text
+                        style={{color: focused ? '#6C0F6D' : 'white', fontSize:12}}
+                        >Notificação</Text>
+                    </View>
+                )
+            }}  
             />
             
             <Tab.Screen
             name="Post"
             component={Post}
-            options={{ headerShown: false }}              
+            options={{  
+                headerShown: false,             
+                tabBarIcon:({focused}) => (
+                    
+                    <View style={{alignItems:'center', justifyContent:'center'}}>
+                        <Image
+                        source={require('../../assets/TabImage/centro.png')}
+                        
+                        style={{
+                            width: 25,
+                            height: 25,
+                            tintColor: focused ? '#6C0F6D' : 'white',
+                        }}
+                        />
+                        <Text
+                        style={{color: focused ? '#6C0F6D' : 'white', fontSize:12}}
+                        >Post</Text>
+                    </View>
+                )
+            }}              
             />
 
             <Tab.Screen
             name="Perfil"
             component={Perfil}
-            options={{ headerShown: false }}  
+            options={{  
+                headerShown: false,             
+                tabBarIcon:({focused}) => (
+                    
+                    <View style={{alignItems:'center', justifyContent:'center'}}>
+                        <Image
+                        source={require('../../assets/TabImage/perfil.png')}
+                        
+                        style={{
+                            width: 25,
+                            height: 25,
+                            tintColor: focused ? '#6C0F6D' : 'white',
+                        }}
+                        />
+                        <Text
+                        style={{color: focused ? '#6C0F6D' : 'white', fontSize:12}}
+                        >Perfil</Text>
+                    </View>
+                )
+            }}  
             />
 
             <Tab.Screen
             name="Search"
             component={Search}
-            options={{ headerShown: false }}  
+            options={{  
+                headerShown: false,             
+                tabBarIcon:({focused}) => (
+                    
+                    <View style={{alignItems:'center', justifyContent:'center'}}>
+                        <Image
+                        source={require('../../assets/TabImage/procurar.png')}
+                        
+                        style={{
+                            width: 25,
+                            height: 25,
+                            tintColor: focused ? '#6C0F6D' : 'white',
+                        }}
+                        />
+                        <Text
+                        style={{color: focused ? '#6C0F6D' : 'white', fontSize:12}}
+                        >Procurar</Text>
+                    </View>
+                )
+            }}  
             />
 
         </Tab.Navigator>

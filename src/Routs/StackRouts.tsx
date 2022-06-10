@@ -6,6 +6,7 @@ import Login from "../StackPage/Login";
 import First from "../StackPage/First";
 import Registration from "../StackPage/Registration";
 import Routs2 from "./TabRouts";
+import Post from "../StackPage/Post";
 
 
 const Stack = createNativeStackNavigator();
@@ -36,6 +37,12 @@ export default function Routs () {
              <Stack.Screen
              name="Routs2"
              component={Routs2}
+             options={{headerShown: false}}
+             />
+
+             <Stack.Screen
+             name="Post"
+             component={Post}
              options={{headerShown: false}}
              />
 
