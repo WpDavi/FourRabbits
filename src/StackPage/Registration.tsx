@@ -24,11 +24,11 @@ export default function Registration( ){
                 <TextInput placeholderTextColor={'#9FA0A2'} secureTextEntry={true} style={styles.inputcadastro} placeholder="Confirmar senha"/>
                 
                 <TouchableOpacity style={styles.buttonentrar}>
-                  <Text style={styles.txtbuttonentrar}> Entrar </Text>
+                  <Text style={styles.txtbuttonentrar}> Cadastrar </Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity
-                onPress={() => navigation.navigate('login')}
+                onPress={() => navigation.navigate('Login')}
                  style={styles.buttonjaecadastrado}>
                     <Text style={styles.txtbuttonjaecadastrado}>Ja e cadastrado? faça o login</Text>
                  </TouchableOpacity>
