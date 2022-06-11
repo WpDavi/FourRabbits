@@ -18,7 +18,6 @@ export default function Post() {
         }      
         
         launchImageLibrary( options, Response => {
-            
             if(Response.errorCode) {
                 console.log(Response.errorMessage)
             } else if (Response.didCancel) {
