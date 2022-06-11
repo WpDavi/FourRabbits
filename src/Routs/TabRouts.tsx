@@ -90,7 +90,7 @@ export default function Routs2() {
                 headerShown: false,             
                 tabBarIcon:({focused}) => (
                     
-                    <View style={{backgroundColor:'red', padding:15, borderRadius:23, position:'absolute', bottom:40}}>
+                    <View style={{backgroundColor:'red', padding:15, borderRadius:39, position:'absolute', bottom:40}}>
 
                         <TouchableOpacity
                         onPress={() => navigation.navigate('Post') } >
