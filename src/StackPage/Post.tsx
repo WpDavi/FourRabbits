@@ -3,6 +3,7 @@ import {View, Text,Alert, Image, StyleSheet, TouchableOpacity, TextInput, SafeAr
 import {launchImageLibrary } from 'react-native-image-picker';
 
 
+
 export default function Post() {
 
     const [image, setImage] = useState()
@@ -60,7 +61,7 @@ export default function Post() {
             <TouchableOpacity 
             
             onPress={selectImage}>
-                    <Image style={{ width:35, height:35, bottom:-130,}}
+                    <Image style={{ width:35, height:35, bottom:-130, right:-330}}
                     source={require('../../assets/cam.png')} />
             </TouchableOpacity>
 

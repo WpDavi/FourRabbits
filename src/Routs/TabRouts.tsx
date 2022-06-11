@@ -16,7 +16,7 @@ export default function Routs2() {
 
     const navigation = useNavigation();
 
-    const [image, setImage] = useState()
+    const [imagee, setImagee] = useState()
     
     const selectImage = () => {
         
@@ -35,10 +35,11 @@ export default function Routs2() {
                 console.log('Usuario Cancelou')
             } else {
                 const path = response.assets[0].uri
-                setImage(path)
+                setImagee(path)
             }
         })
-        
+
+        navigation.navigate('Post')
         
     }
 
