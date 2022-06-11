@@ -1,12 +1,35 @@
-import React from "react";
+import React, {useState} from "react";
 import {View, Text,Alert, Image, StyleSheet, TouchableOpacity, TextInput, SafeAreaView} from 'react-native'
+import {launchImageLibrary } from 'react-native-image-picker';
+
 
 export default function Post() {
+
+    const [image, setImage] = useState('https://via.placeholder.com/200')
     
     const selectImage = () =>{
-        Alert.alert(
-            "Alert Title",
-            "My Alert Msg",)
+        
+        const options = {
+            title: 'Selecionar Imagen',
+            storageOptions: {
+                skipBackup: true,
+                path:'imagens',
+            }
+        }      
+        
+        launchImageLibrary( options, Response => {
+            
+            if(Response.errorCode) {
+                console.log(Response.errorMessage)
+            } else if (Response.didCancel) {
+                console.log('Usuario Cancelou')
+            } else {
+                const path = response.assets[0].uri
+                setImage(path)
+            }
+        })
+        
+        
     }
 
     return(
@@ -35,13 +58,16 @@ export default function Post() {
                  placeholderTextColor={'#6C0F6D'}/>
             </View>
 
-            <TouchableOpacity >
-                    <Image style={{ width:35, height:35, position:'absolute', bottom:-150, right:30 }}
+            <TouchableOpacity 
+            
+            onPress={selectImage}>
+                    <Image style={{ width:35, height:35, bottom:-130,}}
                     source={require('../../assets/cam.png')} />
             </TouchableOpacity>
+
             <View>
-                <Image style={{width:370, resizeMode:'contain', alignItems:'flex-start', alignSelf:'center'  }}
-                 source={require('../../assets/wall.png')} />
+                <Image style={{ alignSelf:'center',height:200, width:200 }}
+                 source={{ uri: image }} />
             </View>
 
         </SafeAreaView>        
