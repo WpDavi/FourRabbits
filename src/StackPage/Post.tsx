@@ -5,22 +5,22 @@ import {launchImageLibrary } from 'react-native-image-picker';
 
 export default function Post() {
 
-    const [image, setImage] = useState('https://via.placeholder.com/200')
+    const [image, setImage] = useState()
     
-    const selectImage = () =>{
+    const selectImage = () => {
         
         const options = {
-            title: 'Selecionar Imagen',
+            title: 'Seleccinar Image',
             storageOptions: {
                 skipBackup: true,
-                path:'imagens',
+                path: 'images',
             }
         }      
         
-        launchImageLibrary( options, Response => {
-            if(Response.errorCode) {
-                console.log(Response.errorMessage)
-            } else if (Response.didCancel) {
+        launchImageLibrary(options, response =>{
+            if(response.errorCode) {
+                console.log(response.errorMessage)
+            } else if ( response.didCancel) {
                 console.log('Usuario Cancelou')
             } else {
                 const path = response.assets[0].uri
@@ -52,7 +52,7 @@ export default function Post() {
                 </TouchableOpacity>
 
                 <TextInput style={styles.textimput}
-                 placeholder='Oque tem a dizer?'
+                 placeholder='Oque tem a dizr?'
                  multiline={true}
                  placeholderTextColor={'#6C0F6D'}/>
             </View>
@@ -64,8 +64,8 @@ export default function Post() {
                     source={require('../../assets/cam.png')} />
             </TouchableOpacity>
 
-            <View>
-                <Image style={{ alignSelf:'center',height:200, width:200 }}
+            <View style={{width: 370, alignSelf:'center',  marginTop:170, alignItems:'flex-start'}}>
+                <Image style={{ alignSelf:'center',height:370, width:370 }}
                  source={{ uri: image }} />
             </View>
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { View, Text, Image, TouchableOpacity } from 'react-native'
 import { useNavigation } from "@react-navigation/native";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
@@ -14,6 +14,33 @@ const Tab = createBottomTabNavigator();
 export default function Routs2() {
 
     const navigation = useNavigation();
+
+    const [image, setImage] = useState()
+    
+    const selectImage = () => {
+        
+        const options = {
+            title: 'Seleccinar Image',
+            storageOptions: {
+                skipBackup: true,
+                path: 'images',
+            }
+        }      
+        
+        launchImageLibrary(options, response =>{
+            if(response.errorCode) {
+                console.log(response.errorMessage)
+            } else if ( response.didCancel) {
+                console.log('Usuario Cancelou')
+            } else {
+                const path = response.assets[0].uri
+                setImage(path)
+            }
+        })
+        
+        
+    }
+
 
     return( 
         <Tab.Navigator
@@ -93,7 +120,7 @@ export default function Routs2() {
                     <View style={{backgroundColor:'red', padding:15, borderRadius:39, position:'absolute', bottom:40}}>
 
                         <TouchableOpacity
-                        onPress={() => navigation.navigate('Post') } >
+                        onPress={() => {navigation.navigate('Post')} } >
                         <Image
                         source={require('../../assets/TabImage/centro.png')}
                         
