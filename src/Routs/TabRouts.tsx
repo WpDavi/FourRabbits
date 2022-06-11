@@ -29,6 +29,7 @@ export default function Routs2() {
         }      
         
         launchImageLibrary(options, response =>{
+            
             if(response.errorCode) {
                 console.log(response.errorMessage)
             } else if ( response.didCancel) {
@@ -39,7 +40,7 @@ export default function Routs2() {
             }
         })
 
-        navigation.navigate('Post')
+        navigation.navigate (<'Post')
         
     }
 
