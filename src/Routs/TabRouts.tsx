@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import { View, Text, Image, TouchableOpacity } from 'react-native'
 import { useNavigation } from "@react-navigation/native";
+import {launchImageLibrary } from 'react-native-image-picker';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 
 import Home from "../TabPage/Home";
@@ -120,7 +121,7 @@ export default function Routs2() {
                     <View style={{backgroundColor:'red', padding:15, borderRadius:39, position:'absolute', bottom:40}}>
 
                         <TouchableOpacity
-                        onPress={() => {navigation.navigate('Post')} } >
+                        onPress={selectImage} >
                         <Image
                         source={require('../../assets/TabImage/centro.png')}
                         

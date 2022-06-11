@@ -65,7 +65,7 @@ export default function Post() {
             </TouchableOpacity>
 
             <View style={{width: 370, alignSelf:'center',  marginTop:170, alignItems:'flex-start'}}>
-                <Image style={{ alignSelf:'center',height:370, width:370 }}
+                <Image style={{ alignSelf:'center',height:400, width:370 }}
                  source={{ uri: image }} />
             </View>
 
